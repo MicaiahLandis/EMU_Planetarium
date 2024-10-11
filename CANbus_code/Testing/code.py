@@ -1,3 +1,5 @@
+# circuit python code for feather rp2040 CAN
+
 import board
 import busio
 import digitalio
