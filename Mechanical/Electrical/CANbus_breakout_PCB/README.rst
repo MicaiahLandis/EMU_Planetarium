@@ -8,4 +8,8 @@
 
 
 Created by 'Micaiah Landis'_
-_Micaiah Landis: http://micaiahlandis.com
+.. _Micaiah Landis: http://micaiahlandis.com
+
+`A cool website`_
+
+.. _A cool website: http://sphinx-doc.org
