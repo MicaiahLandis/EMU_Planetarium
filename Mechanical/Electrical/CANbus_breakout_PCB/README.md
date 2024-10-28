@@ -15,7 +15,7 @@ The board provides input and passthrough plugs for CANbus H and L, as well as a 
 ## Images
 
 ## Schematic
-![Schematic](https://github.com/MicaiahLandis/EMU_Planetarium/blob/main/Mechanical/Electrical/CANbus_breakout_PCB/schematic-1.png)
+![Schematic](https://github.com/MicaiahLandis/EMU_Planetarium/blob/main/Mechanical/Electrical/CANbus_breakout_PCB/schematic.png)
 
 ## PCB
 ![PCB](path_to_your_pcb_image)
