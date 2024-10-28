@@ -8,4 +8,4 @@
 
 
 Created by 'Micaiah Landis'_
-.. _Micaiah Landis: http://micaiahlandis.com
+_Micaiah Landis: http://micaiahlandis.com
