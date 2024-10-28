@@ -1,4 +1,6 @@
-'# EMU Planetarium CANbus breakout pcb
+EMU Planetarium CANbus breakout pcb
+
+Purpose:
 
   This pcb is designed to connect to a Adafruit CANbus RP2040 and breakout the GPIO pins to multiple JST connectors. The board has plugs for two stepper controllers and two breakbeams. 
   
@@ -6,7 +8,9 @@
 
   The remaing GPIO pins from the RP2040 are routed to extra mounting holes as spares. Aditionally there are two spare two pin 5V and GND JST Connectors
 
+Pinout:
 
+  J1-J15:
 
 Created by `Micaiah Landis`_
 
