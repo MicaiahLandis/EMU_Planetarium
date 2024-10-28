@@ -16,6 +16,11 @@ Images:
 
   Schematic:
 
+.. image:: EMU_Planetarium/Mechanical/Electrical/CANbus_breakout_PCB
+/schematic-1.pdf
+  :width: 400
+  :alt: Alternative text
+
   PCB:
 
 Created by `Micaiah Landis`_
