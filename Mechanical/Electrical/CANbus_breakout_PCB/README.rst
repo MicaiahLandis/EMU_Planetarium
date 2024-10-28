@@ -7,7 +7,8 @@
   The remaing GPIO pins from the RP2040 are routed to extra mounting holes as spares. Aditionally there are two spare two pin 5V and GND JST Connectors
 
 
-Created by 'Micaiah Landis'_
+Created by `Micaiah Landis`_
+
 .. _Micaiah Landis: http://micaiahlandis.com
 
 `A cool website`_
