@@ -7,10 +7,15 @@ Programming Team:
   Laura Benner, Hellena Gebremedhin, Canyon Penner
 
 Goals of project (mechanical):
+
   Movement on all axis
+
   Starball fully functional
+
   New base
 
 Goals of project (programming):
+
   Intuitive user interface
+
   Reliable software to control all movement and lights
