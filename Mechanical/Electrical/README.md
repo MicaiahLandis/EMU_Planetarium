@@ -27,7 +27,7 @@
 ## Images
 
 ### Image 1: [Description of First Image]
-![Image 1](path_to_first_image)
+![Image 1](https://github.com/MicaiahLandis/EMU_Planetarium/blob/main/Mechanical/Electrical/Sliprings_electrical.jpg)
 
 ### Image 2: [Description of Second Image]
-![Image 2](path_to_second_image)
+![Image 2](https://github.com/MicaiahLandis/EMU_Planetarium/blob/main/Mechanical/Electrical/sliprings1.jpg)
