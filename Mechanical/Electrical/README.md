@@ -26,8 +26,8 @@
 
 ## Images
 
-### Image 1: [Description of First Image]
+### Image 1: [Slip rings and wiring at axis 1]
 ![Image 1](https://github.com/MicaiahLandis/EMU_Planetarium/blob/main/Mechanical/Electrical/Sliprings_electrical.jpg)
 
-### Image 2: [Description of Second Image]
+### Image 2: [80 sliprings through axis 3 (Base)]
 ![Image 2](https://github.com/MicaiahLandis/EMU_Planetarium/blob/main/Mechanical/Electrical/sliprings1.jpg)
