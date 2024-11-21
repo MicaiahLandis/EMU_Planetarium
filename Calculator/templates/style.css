@@ -1,0 +1,151 @@
+/* Universal styling for better visuals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: monospace;
+    background-color: #A6B8B8;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+    font-size: 18px; 
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%; 
+  }
+  
+  .title img {
+    width: 250px; 
+  }
+  
+  .console {
+    background-color: #A6B8B8;
+    border: 15px solid #53301C; /* Thicker brown border */
+    padding: 40px; 
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    display: flex; /* Enable flexbox for the console */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+  }
+  
+  .panel {
+    background-color: #778d8d; 
+    padding: 20px;
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid black; /* Black outline around the panel */
+  }
+  
+  h1 {
+    color: #eee;
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    color: #eee;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="date"],
+  input[type="time"],
+  input[type="number"] {
+    background-color: #eee;
+    border: 2px solid #53301C;
+    padding: 8px;
+    font-family: monospace;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .go-button {
+    background: linear-gradient(135deg, #EF3B36, #D82E2F);
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 25px;
+    display: block; /* Make it a block element */
+    margin: 20px auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .go-button:hover {
+    background-color: #bd2130;
+  }
+  
+  #status {
+    margin-top: 20px;
+    color: #ffc107;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) { 
+    body {
+      font-size: 16px;
+    }
+  
+    .console {
+      padding: 20px; /* Reduce padding on smaller screens */
+    }
+  
+    .panel {
+      padding: 30px; /* Reduce padding on smaller screens */
+    }
+  
+    .go-button {
+      padding: 10px 30px; /* Smaller button size */
+      font-size: 1em; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+    .title img {
+      width: 200px; /* Smaller logo */
+    }
+  
+    .console {
+      border-width: 10px; /* Slightly thinner border */
+    }
+  
+    .panel {
+      padding: 20px; /* Reduce padding further */
+    }
+  }

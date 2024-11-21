@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Coordinate Navigator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-space-blue: #0D1321;
+            --nebula-purple: #3E4C5E;
+            --star-white: #E9ECEF;
+            --galaxy-accent: #5D6D7E;
+            --comet-blue: #34495E;
+            --glow-blue: rgba(93, 160, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--deep-space-blue), #000C1F);
+            color: var(--star-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+        
+        .cosmic-container {
+            background: rgba(20, 30, 50, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            border: 2px solid var(--galaxy-accent);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .cosmic-container:hover {
+            box-shadow: 0 0 20px var(--glow-blue), 0 0 40px var(--glow-blue), 0 0 60px var(--glow-blue);
+            transition: box-shadow 2.3s ease;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--comet-blue), var(--deep-space-blue));
+            border: 3px solid var(--star-white);
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--star-white);
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--star-white);
+            font-weight: 300;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(62, 76, 94, 0.5);
+            border: 2px solid var(--galaxy-accent);
+            border-radius: 10px;
+            color: var(--star-white);
+            font-family: 'Roboto Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--star-white);
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+
+        .cosmic-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #5D6D7E, #34495E);
+            color: var(--star-white);
+            border: none;
+            border-radius: 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .cosmic-button:hover {
+            background: linear-gradient(135deg, #34495E, #2C3E50);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+        }
+
+        @media (max-width: 600px) {
+            .cosmic-container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Optional: Add some subtle star-like animations */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1E2029 0%, #0D1321 100%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-container">
+        <div class="header">
+            <div class="logo">
+                {% load static %}
+                <img src="{% static 'planetlogo.png' %}" alt="Planetarium Logo">
+            </div>
+            <h1>Celestial Coordinate Navigator</h1>
+        </div>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="date">Date of Observation</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="time">Time of Observation</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="input-group">
+                <label for="latitude">Observation Latitude</label>
+                <input type="number" id="latitude" name="latitude" step="0.01" placeholder="Enter latitude in degrees" required>
+            </div>
+
+            <div class="input-group">
+                <label for="longitude">Observation Longitude</label>
+                <input type="number" id="longitude" name="longitude" step="0.01" placeholder="Enter longitude in degrees" required>
+            </div>
+
+            <button type="submit" class="cosmic-button">Explore Coordinates</button>
+        </form>
+    </div>
+</body>
+</html>

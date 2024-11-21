@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-space-blue: #0D1321;
+      --nebula-purple: #3E4C5E;
+      --star-white: #E9ECEF;
+      --galaxy-accent: #5D6D7E;
+      --comet-blue: #34495E;
+      --glow-blue: rgba(93, 160, 255, 0.7);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, var(--deep-space-blue), #000C1F);
+      color: var(--star-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      perspective: 1000px;
+    }
+
+    .cosmic-container {
+      background: rgba(20, 30, 50, 0.7);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      border: 2px solid var(--galaxy-accent);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .cosmic-container:hover {
+      box-shadow: 0 0 20px var(--glow-blue), 0 0 40px var(--glow-blue), 0 0 60px var(--glow-blue);
+      transition: box-shadow 2.3s ease;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--comet-blue), var(--deep-space-blue));
+      border: 3px solid var(--star-white);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .logo:hover {
+      animation: spin 2s infinite linear;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--star-white);
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+      margin-bottom: 15px;
+      animation: glow 3s infinite;  
+      text-decoration: underline;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(93,160,255,0.5);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(93,160,255,0.7);
+      } 
+    }
+
+    .header p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .cosmic-container {
+        width: 95%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, #1E2029 0%, #0D1321 100%);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="cosmic-container">
+    <div class="header">
+      <div class="logo">
+        {% load static %}
+        <img src="{% static 'planetlogo.png' %}" alt="Planetarium Logo">
+      </div>
+      <h1>Results</h1>
+      <p>Sidereal Time: {{ sidereal }}</p>
+      <p>Target Right Ascension: {{ target_ra }}</p>
+      <p>Target Declination: {{ target_dec }}</p>
+    </div>
+  </div>
+</body>
+</html>
