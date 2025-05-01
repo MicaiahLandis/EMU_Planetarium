@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMU Planetarium</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="main-header">EMU Planetarium</header>
+
+        <nav>
+            <ul>
+                <li class="active" id="sky-simulator-tab">Sky Simulator</li>
+                <li id="continuous-motion-tab">Continuous Motion</li>
+                <li id="lights-tab">Lights</li>
+                <li id="show-tab">Show</li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div id="sky-simulator" class="tab-content active">
+                <img src="{{ url_for('static', filename='images/sky.png') }}" alt="Sky Image" id="sky-image">
+                <form id="sky-simulator-form">
+                    <div class="input-row">
+                        <div>
+                            <label for="latitude">Latitude:</label>
+                            <input type="number" step="any" id="latitude" name="latitude" required min="0" max="90"
+                                value="38.470">
+                        </div>
+                        <div>
+                            <label for="longitude">Longitude:</label>
+                            <input type="number" step="any" id="longitude" name="longitude" required min="-180"
+                                max="180" value="-78.878">
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div>
+                            <label for="date">Date:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div>
+                            <label for="time">Local Time:</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+
+                    <button type="submit">Simulate Sky</button>
+                </form>
+            </div>
+
+            <div id="continuous-motion" class="tab-content">
+                <div id="motion-controls">
+                    <div class="motion-box">
+                        <input type="checkbox" id="axis1-checkbox" class="axis-checkbox">
+                        <h2 class="axis-title">Daily</h2>
+                        <img src="{{ url_for('static', filename='images/axis1.png') }}" alt="Axis 1 Image"
+                            class="axis-image">
+                        <div>
+                            <label for="axis1-speed">Speed:</label>
+                            <select id="axis1-speed">
+                                <option value="slow">Slow</option>
+                                <option value="medium">Medium</option>
+                                <option value="fast">Fast</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="axis1-direction">Direction:</label>
+                            <select id="axis1-direction">
+                                <option value="forward">Forward</option>
+                                <option value="backward">Backward</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="motion-box">
+                        <input type="checkbox" id="axis2-checkbox" class="axis-checkbox">
+                        <h2 class="axis-title">Latitude</h2>
+                        <img src="{{ url_for('static', filename='images/axis2.png') }}" alt="Axis 2 Image"
+                            class="axis-image">
+                        <div>
+                            <label for="axis2-speed">Speed:</label>
+                            <select id="axis2-speed">
+                                <option value="slow">Slow</option>
+                                <option value="medium">Medium</option>
+                                <option value="fast">Fast</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="axis2-direction">Direction:</label>
+                            <select id="axis2-direction">
+                                <option value="forward">Forward</option>
+                                <option value="backward">Backward</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="motion-box">
+                        <input type="checkbox" id="axis3-checkbox" class="axis-checkbox">
+                        <h2 class="axis-title">Azimuth</h2>
+                        <img src="{{ url_for('static', filename='images/axis3.png') }}" alt="Axis 3 Image"
+                            class="axis-image">
+                        <div>
+                            <label for="axis3-speed">Speed:</label>
+                            <select id="axis3-speed">
+                                <option value="slow">Slow</option>
+                                <option value="medium">Medium</option>
+                                <option value="fast">Fast</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="axis3-direction">Direction:</label>
+                            <select id="axis3-direction">
+                                <option value="forward">Forward</option>
+                                <option value="backward">Backward</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="motion-box">
+                        <input type="checkbox" id="axis4-checkbox" class="axis-checkbox">
+                        <h2 class="axis-title">Precession</h2>
+                        <img src="{{ url_for('static', filename='images/starball.png') }}" alt="Starball Axis Image"
+                            class="axis-image">
+                        <div>
+                            <label for="axis4-speed">Speed:</label>
+                            <select id="axis4-speed">
+                                <option value="slow">Slow</option>
+                                <option value="medium">Medium</option>
+                                <option value="fast">Fast</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="axis4-direction">Direction:</label>
+                            <select id="axis4-direction">
+                                <option value="forward">Forward</option>
+                                <option value="backward">Backward</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lights" class="tab-content">
+                <div id="light-flex">
+                    <form class="light-controls">
+                        <br>
+                        <label><input type="checkbox" id="star-checkbox"> Starball Lamp</label><br>
+                        <label><input type="checkbox" id="ecliptic-checkbox"> Ecliptic</label><br>
+                        <label><input type="checkbox" id="meridian-checkbox"> Meridian</label><br>
+                        <label><input type="checkbox" id="equatorial-checkbox"> Equatorial</label><br>
+                        <label><input type="checkbox" id="geo-earth-checkbox"> Geo Earth</label><br>
+                        <label><input type="checkbox" id="pole-light-checkbox"> Pole Light</label><br>
+                        <label><input type="checkbox" id="twilight-checkbox"> Twilight</label><br>
+                    </form>
+                    <form class="light-controls">
+                        <br>
+                        <label><input type="checkbox" id="cardinal-points-checkbox"> Cardinal Points</label><br>
+                        <label><input type="checkbox" id="latitude-checkbox"> Latitude</label><br>
+                        <label><input type="checkbox" id="moon-checkbox"> Moon</label><br>
+                        <label><input type="checkbox" id="sun-checkbox"> Sun</label><br>
+                        <label><input type="checkbox" id="planets-checkbox"> Naked Eye Planets</label><br>
+                        <label><input type="checkbox" id="orion-checkbox"> Orion Constellation</label><br>
+                        <label><input type="checkbox" id="cassiopeia-checkbox"> Cassiopeia Constellation</label><br>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="show" class="tab-content">
+                <div id="show-controls">
+                    <span id="counter">1/10</span>
+                    <button id="next">Next</button>
+                </div>
+                <p id="text"></p>
+            </div>
+        </div>
+    </div>
+    <div id="bottom-buttons">
+        <button id="calibrate-button" class="bottom-button">Calibrate</button>
+    </div>
+    <div id="overlay">
+        Calibrating... Please wait.
+    </div>
+</body>
+
+</html>
