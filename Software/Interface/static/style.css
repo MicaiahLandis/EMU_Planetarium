@@ -1,0 +1,290 @@
+:root {
+    --bg-dark: #0a0f29;
+    --bg-medium: #222E50;
+    --bg-hover: #33436d;
+    --accent: #3c4e9d;
+    --accent-hover: #566dc1;
+    --shadow: rgba(122, 122, 151, 0.4);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: white;
+}
+
+.main-header {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 800px;;
+    margin: auto;
+    padding-top: 50px;
+}
+
+#content {
+    font-size: 1.2em;
+    padding: 20px;
+    background-color: var(--bg-medium);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--shadow);
+}
+
+nav {
+    background-color: var(--bg-dark);
+    border-radius: 20px 20px 0 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--bg-dark);
+    border-radius: 15px 15px 0 0;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    box-shadow: 2px -2px 2px var(--shadow);
+}
+
+nav ul li:hover {
+    background-color: var(--bg-hover);
+}
+
+nav ul li.active {
+    background-color: var(--bg-medium);
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: var(--bg-medium);
+    color: white;
+    font-size: 1em;
+}
+
+select:focus {
+    background-color: var(--bg-hover);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.axis-checkbox {
+    display: flex;
+    justify-self: center;
+}
+
+.axis-title {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+#motion-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.motion-box {
+    background-color: var(--bg-dark);
+    padding: 15px;
+    border-radius: 10px;
+    width: 22%;
+    text-align: left;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 5px rgba(255, 255, 255, 0.1), 
+                0px 0px 10px rgba(200, 198, 200, 0.3);
+}
+
+.motion-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.motion-box select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#sky-simulator {
+    background-color: var(--bg-dark);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(200, 198, 200, 0.3);
+    text-align: left;
+}
+
+#sky-simulator form > div {
+    margin-bottom: 15px;
+}
+
+#sky-simulator label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#sky-simulator input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: var(--bg-medium);
+    color: white;
+    font-size: 1em;
+}
+
+#sky-simulator input:focus {
+    background-color: var(--bg-hover);
+}
+
+#sky-simulator button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sky-simulator button:hover {
+    background-color: var(--accent-hover);
+}
+
+#lights.active {
+    display: flex;
+    justify-content: center;
+}
+
+.light-controls {
+    max-width: 400px;
+    width: auto;
+    text-align: left;
+}
+
+.light-controls label {
+    display: block;
+    margin-top: 2px;
+}
+
+#light-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.axis-image {
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+#sky-image {
+    width: 30%;
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.input-row > div {
+    flex: 1;
+    min-width: 150px;
+}
+
+#show-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#bottom-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.bottom-button {
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bottom-button:hover {
+    background-color: var(--accent-hover);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0f29a2;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+@media (max-width: 600px) {
+    .motion-box {
+        width: 100%;
+    }
+    .input-row {
+        flex-direction: column;
+    }
+}
