@@ -1,4 +1,4 @@
-# Feather Board 3 (Axis 1: Daily; Axis 4: Starball)
+# Feather Board 1 (Axis 1: Daily; Axis 4: Starball)
 # EMU Engineering Capstone 2024-25
 # Laura Benner
 # laurabennerr@gmail.com
