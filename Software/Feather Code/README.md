@@ -1,6 +1,7 @@
 # Adafruit Feather Code
+For use on [Adafruit RP2040 CAN Bus Feather with MCP2515 CAN Controller](https://www.adafruit.com/product/5724)
 
-To set up a new feather board:
+To set up a new Feather board:
 1. Download [CircuitPython](https://circuitpython.org/board/adafruit_feather_rp2040_can/).
 2. Hold down the BOOT button, plug the board in (or start with it plugged in and instead press and release the RESET button), and continue to hold the BOOT button until a drive shows up.
 3. Drag the CircuitPython .UF2 file to the drive.
